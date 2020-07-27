@@ -6,19 +6,23 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductsComponent } from './products/products.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { LoginComponent } from './login/login.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    CarouselComponent
+    CarouselComponent,
+    ProductsComponent,
+    AboutUsComponent,
+    LoginComponent,
+    SignInComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
