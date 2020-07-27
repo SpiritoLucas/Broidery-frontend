@@ -12,12 +12,27 @@
     </div>
 
     <nav id="nav-menu-container">
-      <ul class="nav-menu">
-        <li class="menu-active"><a href="">Home</a></li>
-        <li><a href="">Nosotros</a></li>
-        <li><a href="">Login</a></li>
-        <li><a href="">Registrarse</a></li>
-        <li><a href="">Productos</a></li>
+      <ul
+        id="menu"
+        class="nav-menu"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <li class="menu-active" role="presentation" routerLinkActive="active">
+          <a routerLink="/">Home</a>
+        </li>
+        <li role="presentation" routerLinkActive="active">
+          <a routerLink="/about_us">Nosotros</a>
+        </li>
+        <li role="presentation" routerLinkActive="active">
+          <a routerLink="/login">Login</a>
+        </li>
+        <li role="presentation" routerLinkActive="active">
+          <a routerLink="/sign_in">Registrarse</a>
+        </li>
+        <li role="presentation" routerLinkActive="active">
+          <a routerLink="/products">Productos</a>
+        </li>
       </ul>
     </nav>
   </div>

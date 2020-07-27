@@ -1,4 +1,4 @@
-<ngb-carousel *ngIf="images" class="max1">
+<ngb-carousel class="max1">
   <ng-template ngbSlide>
     <div style="max-height: 600px;" class="picsum-img-wrapper">
       <img [src]="images[0]" alt="Random first slide" />
@@ -12,7 +12,10 @@
     <div class="carousel-caption"></div>
   </ng-template>
   <ng-template ngbSlide>
-    <div style="max-height: 600px; max-width: 400px;" class="picsum-img-wrapper">
+    <div
+      style="max-height: 600px; max-width: 400px;"
+      class="picsum-img-wrapper"
+    >
       <img [src]="images[2]" alt="Random third slide" />
     </div>
     <div class="carousel-caption"></div>
@@ -61,3 +64,4 @@
     </form>
   </div>
 </section>
+<app-products></app-products>
