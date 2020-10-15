@@ -1,0 +1,65 @@
+<div id="parent" *ngIf="product$ | async; let product">
+  <div id="wide" class="card">
+    <img [src]="product.image" />
+    <h4>{{ product.description }}</h4>
+    <p class="price">${{ product.price }} por metro</p>
+    <p>{{ product.composition }}</p>
+    <button
+      id="activate"
+      class="btn"
+      [ngClass]="{
+        'btn-success': !product.isActive,
+        'btn-danger': product.isActive
+      }"
+      (click)="onEditProductState(product.id)"
+    >
+      {{ product.isActive ? 'Desactivar' : 'Activar' }}
+    </button>
+  </div>
+  <form [formGroup]="form" id="edit" class="card" (ngSubmit)="onEditProduct()">
+    <div style="padding: 10px; padding-bottom: 10px">
+      <h1 style="size: 1000">Editar producto nº{{ product.id }}</h1>
+      <img style="float: right; max-width: 200px" [src]="product.image" />
+    </div>
+    <div>
+      <label>Url de Imagen</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Ingrese la url de la imagen"
+        formControlName="image"
+      />
+    </div>
+    <div>
+      <label>Precio</label>
+      <input
+        style="width: 70px"
+        type="number"
+        class="form-control"
+        placeholder="Ingrese el precio"
+        formControlName="price"
+      />
+    </div>
+    <div>
+      <label>Descripción</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Ingrese la descripción"
+        formControlName="description"
+      />
+    </div>
+    <div>
+      <label>Composición</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Ingrese la composición"
+        formControlName="composition"
+      />
+    </div>
+    <div id="buttons">
+      <button class="btn btn-primary" type="submit">Guardar</button>
+    </div>
+  </form>
+</div>
