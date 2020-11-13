@@ -14,30 +14,30 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   onDisplayAllProducts() {
-    return this.http.get<Product[]>('http://localhost:5000/api/all-products');
+    return this.http.get<Product[]>('http://192.168.0.135:5000/api/all-products');
   }
 
   onShowProducts() {
     return this.http.get<Product[]>(
-      'http://localhost:5000/api/all-active-products'
+      'http://192.168.0.135:5000/api/all-active-products'
     );
   }
 
   onEditProductState(productId: number) {
-    return this.http.put('http://localhost:5000/api/product-edit-state', {
+    return this.http.put('http://192.168.0.135:5000/api/product-edit-state', {
       id: productId,
     });
   }
 
   onDisplayProductById(productId: number) {
-    return this.http.get<Product>('https://localhost:5001/api/product-by-id', {
+    return this.http.get<Product>('http://192.168.0.135:5001/api/product-by-id', {
       params: {
         id: `${productId}`,
       },
     });
   }
   onEditProduct(product: Product) {
-    return this.http.put('https://localhost:5001/api/product-edit', product, {
+    return this.http.put('http://192.168.0.135:5001/api/product-edit', product, {
       params: {
         id: `${product.id}`,
       },
