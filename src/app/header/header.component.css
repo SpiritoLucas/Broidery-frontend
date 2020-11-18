@@ -29,7 +29,7 @@
 #header #logo h1 a:hover {
   color: #000;
   padding-left: 10px;
-  border-left: 4px solid grey;
+  /* border-left: 4px solid grey; */
 }
 #nav-menu-container {
   float: right;

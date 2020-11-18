@@ -15,6 +15,7 @@ import { AuthComponent } from './auth/auth.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
 import { ProductComponent } from './products/product/product.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AuthComponent,
     CatalogueComponent,
     ProductComponent,
+    FooterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule, FormsModule, ReactiveFormsModule],
   providers: [ProductService],
