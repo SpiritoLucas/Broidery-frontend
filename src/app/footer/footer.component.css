@@ -5,7 +5,8 @@
 }
 img {
   max-width: 150px;
-  float: right;
+  float: right; 
+  margin-right: 50px;
   padding-right: 50px;
   padding-bottom: 50px;
 }

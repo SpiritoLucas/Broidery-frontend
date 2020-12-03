@@ -9,6 +9,7 @@ export class FooterComponent implements OnInit {
 
   constructor() { }
   logo = '../../assets/images/broidery.png';
+  title = '../../assets/images/title.png';
   ngOnInit() {
   }
 
