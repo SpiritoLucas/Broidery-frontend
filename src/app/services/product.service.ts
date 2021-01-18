@@ -14,30 +14,30 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   onDisplayAllProducts() {
-    return this.http.get<Product[]>('http://192.168.0.135:8082/api/all-products');
+    return this.http.get<Product[]>('https://backend.broiderysa.com/api/all-products');
   }
 
   onShowProducts() {
     return this.http.get<Product[]>(
-      'http://192.168.0.135:8082/api/all-active-products'
+      'https://backend.broiderysa.com/api/all-active-products'
     );
   }
 
   onEditProductState(productId: number) {
-    return this.http.put('http://192.168.0.135:8082/api/product-edit-state', {
+    return this.http.put('https://backend.broiderysa.com/api/product-edit-state', {
       id: productId,
     });
   }
 
   onDisplayProductById(productId: number) {
-    return this.http.get<Product>('http://192.168.0.135:8082/api/product-by-id', {
+    return this.http.get<Product>('https://backend.broiderysa.com/api/product-by-id', {
       params: {
         id: `${productId}`,
       },
     });
   }
   onEditProduct(product: Product) {
-    return this.http.put('http://192.168.0.135:8082/api/product-edit', product, {
+    return this.http.put('https://backend.broiderysa.com/api/product-edit', product, {
       params: {
         id: `${product.id}`,
       },
