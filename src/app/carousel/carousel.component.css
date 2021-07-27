@@ -21,6 +21,10 @@
   height: calc(3rem + 2px) !important;
   border-radius: 0;
 }
+.picsum-img-wrapper{
+    width: 100%;
+    object-fit: cover;
+}
 @media (min-width: 992px) {
   .search-sec {
     position: relative;
