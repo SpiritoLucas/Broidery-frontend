@@ -14,30 +14,30 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   onDisplayAllProducts() {
-    return this.http.get<Product[]>('http://192.168.0.136:8082/api/all-products');
+    return this.http.get<Product[]>('http://192.168.0.135:8082/api/all-products');
   }
 
   onShowProducts() {
     return this.http.get<Product[]>(
-      'http://192.168.0.136:8082/api/all-active-products'
+      'http://192.168.0.135:8082/api/all-active-products'
     );
   }
 
   onEditProductState(productId: number) {
-    return this.http.put('http://192.168.0.136:8082/api/product-edit-state', {
+    return this.http.put('http://192.168.0.135:8082/api/product-edit-state', {
       id: productId,
     });
   }
 
   onDisplayProductById(productId: number) {
-    return this.http.get<Product>('http://192.168.0.136:8082/api/product-by-id', {
+    return this.http.get<Product>('http://192.168.0.135:8082/api/product-by-id', {
       params: {
         id: `${productId}`,
       },
     });
   }
   onEditProduct(product: Product) {
-    return this.http.put('http://192.168.0.136:8082/api/product-edit', product, {
+    return this.http.put('http://192.168.0.135:8082/api/product-edit', product, {
       params: {
         id: `${product.id}`,
       },
