@@ -12,7 +12,7 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   onLogin(Email: string, Password: string) {
-    return this.http.post<AuthResponseData>('https://localhost:5001/api/login', {
+    return this.http.post<AuthResponseData>('https://broidery-backend.k3s/api/login', {
       email: Email,
       password: Password,
     });
