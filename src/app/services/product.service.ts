@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
 import { AppConfigService } from './AppConfigService';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class ProductService {
   products: Product[] = [];

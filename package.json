@@ -20,6 +20,8 @@
     "@angular/platform-browser-dynamic": "~11.2.14",
     "@angular/router": "~11.2.14",
     "@ng-bootstrap/ng-bootstrap": "^5.3.1",
+    "@opentelemetry/instrumentation": "^0.48.0",
+    "@opentelemetry/sdk-trace-web": "^1.21.0",
     "bootstrap": "^4.5.0",
     "rxjs": "~6.6.7",
     "tslib": "^1.10.0",
