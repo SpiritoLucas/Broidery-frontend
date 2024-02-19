@@ -17,6 +17,11 @@ import { ProductComponent } from './products/product/product.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { AppConfigService } from './services/AppConfigService'; // Asegúrate de que la ruta sea correcta
+import {
+  OpenTelemetryInterceptorModule,
+  OtelColExporterModule,
+  CompositePropagatorModule,
+} from '@jufab/opentelemetry-angular-interceptor';
 
 
 export function initConfig(appConfig: AppConfigService) {
@@ -36,7 +41,22 @@ export function initConfig(appConfig: AppConfigService) {
     ProductComponent,
     FooterComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule, FormsModule, ReactiveFormsModule],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule, FormsModule, ReactiveFormsModule,
+    OpenTelemetryInterceptorModule.forRoot({
+      commonConfig: {
+        console: true, // Display trace on console (only in DEV env)
+        production: false, // Send Trace with BatchSpanProcessor (true) or SimpleSpanProcessor (false)
+        serviceName: 'Broidery-frontend', // Service name send in trace
+        probabilitySampler: '1',
+      },
+      otelcolConfig: {
+        url: 'https://simplest-collector.k3s/v1/traces', // URL of opentelemetry collector
+      },
+    }),
+    //Insert OtelCol exporter module
+    OtelColExporterModule,
+    //Insert propagator module
+    CompositePropagatorModule,],
   providers: [
     ProductService,
     AppConfigService,
