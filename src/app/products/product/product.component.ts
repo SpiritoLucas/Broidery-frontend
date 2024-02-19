@@ -4,7 +4,7 @@ import { ProductService } from 'src/app/services/product.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Product } from 'src/app/model/product.model';
-import { FormGroup, FormControl } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-product',
@@ -14,13 +14,13 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class ProductComponent implements OnInit {
   product$: Observable<Product>;
   id: number;
-  public form = new FormGroup({
-    id: new FormControl(''),
-    price: new FormControl(''),
-    description: new FormControl(''),
-    composition: new FormControl(''),
-    image: new FormControl(''),
-    isActive: new FormControl(''),
+  public form = new UntypedFormGroup({
+    id: new UntypedFormControl(''),
+    price: new UntypedFormControl(''),
+    description: new UntypedFormControl(''),
+    composition: new UntypedFormControl(''),
+    image: new UntypedFormControl(''),
+    isActive: new UntypedFormControl(''),
   });
 
   constructor(
